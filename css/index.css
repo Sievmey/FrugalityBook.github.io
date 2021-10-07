@@ -1,0 +1,161 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  padding:5px;
+}
+.header {
+  background: linear-gradient( rgba(254, 255, 254, 0.1) ,rgba(39, 36, 36, 0.9)) ,url(/assets/logo1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 45vh;
+  position: relative;
+}
+.quote{
+  position: absolute;
+  padding-top:70px;
+  padding-left:50px;
+}
+.quote>#person{
+  margin-left: 100px;
+}
+ul {
+  height: 7vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+  font-size: 15pt;
+  border-left: 3px solid rgb(24, 21, 21);
+  height:100%;
+}
+
+.nav {
+  background-color: rgb(241, 74, 74);
+  /* margin-top: px; */
+}
+li:hover a {
+  color: teal;
+}
+
+.icon {
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: 15% 0.5% 84.5%;
+  height: 68vh;
+}
+
+.books>.booksCat {
+  background-color: rgb(246, 252, 244);
+  margin-top: 5px;
+}
+
+.other{
+  display: grid;
+  grid-template-rows: 4% 48% 48%;
+}
+.other>#h1 {
+  background-color: rgb(248, 239, 239);
+}
+
+.other>#h2 {
+  height: 20vh;
+}
+
+.other>#h1>img {
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.booksCat>a {
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  border-bottom:1px dotted black;
+}
+.booksCat>a:hover{
+  background-color: rgb(119, 164, 247);
+}
+.picture >.pic{
+  display:grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.pic {
+  width: 100%;
+  height: 100%;
+  margin-bottom:-20px;
+}
+
+.pic>.hi>a img {
+  width: 200px;
+  height:300px;
+  margin-top:15px;
+}
+
+.arrival {
+  width: 100%;
+  margin-top:10px;
+  margin-left: 5px;
+  padding-bottom:25px;
+  border-bottom: 5px solid rgb(235, 112, 112);
+}
+
+.textArrival>a {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.arrival>.material-icons {
+  vertical-align: sub;
+}
+.hi{
+  padding:5px;
+}
+.hi>input{
+  border:1px solid blue;
+  border-radius: 5px;
+  background-color: aqua;
+  padding:5px;
+  margin-left:10px;
+}
+.header>#search{
+  margin-top:280px;
+  margin-left:20px;
+  width:300px;
+  height:30px;
+  border-radius: 15px;
+  border:2px solid blue;
+  outline:none;
+  padding-left:3px;
+  background-color:blanchedalmond
+}
+  /* .footer {
+    position: static;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: red;
+    color: white;
+    text-align: center;
+ } */
+.pdf{
+  padding-top: 40px;
+  
+}

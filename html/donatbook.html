@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="/css/index.css">
+  <title>Document</title>
+  <style>
+      form {
+          margin-top: 5%;
+          text-align: center;
+          outline: none;
+        }
+
+        .form>input {
+          width: 500px;
+          height: 40px;
+          padding-left: 5px;
+          font-size: 15px;
+          background-color: gainsboro;
+          border: 1px solid black;
+        }
+
+        .form>select {
+          width: 510px;
+          height: 40px;
+          font-size: 15px;
+          color: grey;
+          background-color: gainsboro;
+          border: 1px solid black;
+        }
+
+        .form>button {
+          font-size: 19px;
+          font-weight: 30px;
+          margin: 50px;
+          padding: 8px;
+          width: 200px;
+        }
+  </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <span class="quote">
+                <h1>Frugality Book</h1>
+                <p>Save Book Save Money Save Knowledge</p><br>
+                <span>One advantage of talking<span style="color:aqua"> ot your self </span>is that you know <br>at
+                    least <span style="color:aqua">listening</span></span><br><br>
+                <p id="person"><i>-Franklin P.Jones</i></p>
+            </span>
+        </div>
+        <input id="search" type="text" placeholder="Search book titles here...">
+    </div>
+    <div class="nav">
+        <ul style="list-style: none" id="subNav">
+            <li class="">
+                <a href="/html/Login.html"><i class="material-icons icon">account_circle</i>Login</a>
+            </li>
+            <li class="">
+                <a href="/html/form.html"><i class="material-icons icon">sell</i>Sell</a>
+            </li>
+            <li class="">
+                <a href="#"><i class="material-icons icon">redeem</i>Donate Book</a>
+            </li>
+            <li class="">
+                <a href="#"><i class="material-icons icon">money_off</i>Read Free</a>
+            </li>
+            <li class="">
+                <a href="#"><i class="material-icons icon">emoji_events</i>Challenge</a>
+            </li>
+            <li class="">
+                <a href="#"><i class="material-icons icon">group</i>About Us</a>
+            </li>
+        </ul>
+    </div>
+      <form  >
+        <div  class="form">
+    
+          <input id="bookPdfLink" type="url" placeholder="Enter pdf book(Pdf Link)" required><br><br>
+          <input id="bookTitle" type="text" placeholder="Enter your Book title" required><br><br>
+          </select><br><br>
+          <button onclick="getValueFromDonator()" style="background-color: rgb(107, 250, 107);"
+           >Submit</button>
+          <button style="background-color: rgb(238, 107, 107);" type="cancel">Cancel</button>
+        </div>
+        <div>
+            <p>Thank you so much for your kindess</p>
+        </div>
+      </form>
+      <script>
+      
+        function getValueFromDonator() {
+           
+        
+        var bookLink = document.getElementById('bookPdfLink');
+        var bookTitle = document.getElementById('bookTitle');
+       
+          if (!Boolean(localStorage.getItem("books"))) {
+
+localStorage.setItem("books", "[]")
+          }
+          console.log(localStorage.getItem("books"))
+          var bookStore=JSON.parse(localStorage.getItem("books"))||[]
+       
+        let bookObject = {
+      
+          "bookPdfLink":bookPdfLink.value,
+          "bookTitle": bookTitle.value,
+          
+        }
+        bookStore.push(bookObject);
+        localStorage.setItem("books", JSON.stringify(bookStore));
+       return false;
+        }
+       var Book=JSON.parse(localStorage.getItem("books"))
+        console.log(Book);
+      </script>
+      
+    </body>
+
+    </html>

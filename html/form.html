@@ -1,0 +1,147 @@
+
+//get values from user and store them in localStorage
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frugality Book</title>
+</head>
+
+<body>
+  <form action="">
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <script src="/front-end/js/home.js"></script> -->
+      <title>Frugality book</title>
+      <style>
+        * {
+          padding: 0px;
+          margin: 0px;
+          box-sizing: 0px;
+        }
+
+
+        form {
+          margin-top: 5%;
+          text-align: center;
+          outline: none;
+        }
+
+        .form>input {
+          width: 500px;
+          height: 40px;
+          padding-left: 5px;
+          font-size: 15px;
+          background-color: gainsboro;
+          border: 1px solid black;
+        }
+
+        .form>select {
+          width: 510px;
+          height: 40px;
+          font-size: 15px;
+          color: grey;
+          background-color: gainsboro;
+          border: 1px solid black;
+        }
+
+        .form>button {
+          font-size: 19px;
+          font-weight: 30px;
+          margin: 50px;
+          padding: 8px;
+          width: 200px;
+        }
+      </style>
+    </head>
+
+    <body>
+      <form  >
+        <div  class="form">
+          <input id="bookLink" type="url" placeholder="Enter Book Picture(By Picture Link)" required><br><br>
+          <input id="bookTitle" type="text" placeholder="Enter your Book title" required><br><br>
+
+          <input id="bookDisc" type="" placeholder="Enter Book Description" required><br><br>
+
+          <input id="bookAuthor" type="text" placeholder=" Enter Book Author" required><br><br>
+          <select id="bookStatus" class="option">
+            <option value="New"><b>New</b></option>
+            <option value="Good"><b>Good</b></option>
+            <option value="Like good"><b>Like good</b></option>
+            <option value="Exceptable"><b>Exceptable</b></option>
+          </select>
+          </select><br><br>
+          <select id="bookCat" class="categary">
+            <option value="Love book">Love book</option>
+            <option value="Motivation">Motivation</option>
+            <option value="History">History</option>
+            <option value="Economic">Economic</option>
+            <option value="Education">Education</option>
+            <option value="Religion">Religion</option>
+            <option value="Continent">Continent</option>
+            <option value="Member of Asian">Member of Asian</option>
+            <option value="Seasons">Seasons</option>
+          </select><br><br>
+          <input id="bookPrice" type="number" placeholder=" Enter Book's Price " required><br>
+          <button onclick="getValueFromSeller()" style="background-color: rgb(107, 250, 107);"
+           >Submit</button>
+          <button style="background-color: rgb(238, 107, 107);" type="cancel">Cancel</button>
+        </div>
+        <div class="conditon" style="font-size: 20px;">
+          <span>You will get benefit <span style="color:rgb(238, 57, 12)">90%</span> of your product's price.<br>If you
+            disagree this condition, you can cancel your decision.<br><span style="color:rgb(235, 152, 29)">Thank for
+              using our website!!!</span> </span>
+        </div>
+        <div id="hello">
+          
+        </div>
+      </form>
+      <script>
+      
+        function getValueFromSeller() {
+           
+            var bookLink = document.getElementById('bookLink');
+        var bookTitle = document.getElementById('bookTitle');
+        var bookDisc = document.getElementById('bookDisc');
+        var bookAuthor = document.getElementById('bookAuthor');
+        var bookStatus = document.getElementById('bookStatus');
+        var bookCat = document.getElementById('bookCat');
+        var bookPrice = document.getElementById('bookPrice');
+        
+       
+          if (!Boolean(localStorage.getItem("books"))) {
+
+localStorage.setItem("books", "[]")
+          }
+          console.log(localStorage.getItem("books"))
+          var bookStore=JSON.parse(localStorage.getItem("books"))||[]
+       
+        let bookObject = {
+          "bookLink": bookLink.value,
+          "bookTitle": bookTitle.value,
+          "bookDisc": bookDisc.value,
+          "bookAuthor": bookAuthor.value,
+          "bookStatus": bookStatus.value,
+          "bookCat": bookCat.value,
+          "bookPrice": bookPrice.value,
+        }
+        bookStore.push(bookObject);
+        localStorage.setItem("books", JSON.stringify(bookStore));
+       return false;
+        }
+       var Book=JSON.parse(localStorage.getItem("books"))
+        console.log(Book);
+      </script>
+      
+    </body>
+
+    </html>

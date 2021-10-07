@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <title>Book Buyer</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+
+        .buy {
+            display: grid;
+            grid-template-columns: 30% 40% 30%;
+        }
+
+        .bookPic>img {
+            width: 400px;
+            height: 300px;
+        }
+
+        #star {
+            text-align: justify;
+        }
+
+        #star #s1,
+        #s2,
+        #s3,
+        #s4 {
+            color: orange;
+        }
+
+        #subStatus {
+            margin-top: 100px;
+            display: flex;
+            text-align: center;
+        }
+
+        #subStatus>.bookBuy {
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+            margin-right: 5px;
+        }
+
+        .bookBuy>button {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .status{
+            padding-left:50px;
+        }
+
+        .bookBuy>button:focus {
+            background-color: gold;
+        }
+        .addToCart{
+            border-left:1px solid black;
+            padding-left:30px;
+        }
+        .cart{
+            background:linear-gradient(to left,rgb(252, 114, 114),rgb(106, 106, 243),rgb(245, 209, 143),rgb(53, 45, 45),rgb(87, 80, 39));
+            height:70px;
+            margin-bottom:50px;
+            text-align: center;
+            position: relative;
+        }
+        .cart >h2{
+            font-size: 40px;
+            padding-top:10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cart">
+        <h2>Enjoy with your dream book!!</h2>
+    </div>
+    <div class="buy">
+        <div class="bookPic">
+            <img src="https://mcgregorcounseling.com/wp-content/uploads/2018/08/2H9A0133-800x600.jpg" alt="">
+            <div id="star">
+                <span id="s1" class="material-icons">
+                    star_rate
+                </span>
+                <span id="s2" class="material-icons">
+                    star_rate
+                </span>
+                <span id="s3" class="material-icons">
+                    star_rate
+                </span>
+                <span id="s4" class="material-icons">
+                    star_rate
+                </span>
+                <span id="s5" class="material-icons">
+                    star_rate
+                </span>
+            </div>
+        </div>
+        <div class="status">
+            <div>
+                <h4>Rich Dad Poor Dad</h4>
+                <span>(find your dream here)</span>
+                <b>by: mr.A</b>
+            </div>
+            <div id="subStatus">
+                <div class="bookBuy">
+                    <button onclick="handleClickPrice1()">New <br>
+                        <span style="color:red;font-weight: bold;">$10</span>
+                    </button>
+                </div>
+                <div class="bookBuy">
+                    <button onclick="handleClickPrice2()">Like New<br>
+                        <span style="color:red;font-weight: bold;">$10</span>
+                    </button>
+                </div>
+                <div class="bookBuy">
+                    <button onclick="handleClickPrice3()">Exeptable<br>
+                        <span style="color:red;font-weight: bold;">$10</span>
+                    </button>
+                </div>
+                <div class="bookBuy">
+                    <button onclick="handleClickPrice4()">Exelent<br>
+                        <span style="color:red;font-weight: bold;">$10</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="addToCart">
+            
+        </div>
+        <script>
+            var getValue=JSON.parse(localStorage.getItem("books"))
+            console.log(getValue);
+
+            function handleClickPrice1() {
+
+                document.getElementsByClassName('addToCart')[0].innerHTML = "Title: Rich Dad Poor Dad<br>Status:Exelent<br><b style='color:red;'>Price:$10<b>"
+
+            }
+            function handleClickPrice2() {
+
+                document.getElementsByClassName('addToCart')[0].innerHTML = "Title: Rich Dad Poor Dad<br>Status:New<br>Price:$20"
+
+            }
+            function handleClickPrice3() {
+
+                document.getElementsByClassName('addToCart')[0].innerHTML = "Title: Rich Dad Poor Dad<br>Status:Like New<br>Price:$30"
+
+            }
+            function handleClickPrice4() {
+
+                document.getElementsByClassName('addToCart')[0].innerHTML = "Title: Rich Dad Poor Dad<br>Status:old<br>Price:$40"
+
+            }
+        </script>
+</body>
+
+</html>
